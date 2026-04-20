@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris Yuto Nakamichi</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Local Arcade Build</p>
+        <h1>Tetris Yuto Nakamichi</h1>
+        <p class="hero-copy">
+          ローカルですぐ遊べるブラウザ版テトリス。キーボード操作でプレイして、
+          スコアを積み上げていきます。
+        </p>
+      </section>
+
+      <section class="game-layout">
+        <div class="board-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-label">Game Board</p>
+              <h2>Play Field</h2>
+            </div>
+            <span id="status-badge" class="status-badge">READY</span>
+          </div>
+
+          <div class="board-frame">
+            <canvas
+              id="game-canvas"
+              width="300"
+              height="600"
+              aria-label="テトリス盤面"
+            ></canvas>
+            <div id="board-overlay" class="board-overlay visible">
+              <p id="overlay-title" class="overlay-title">Press Start</p>
+              <p id="overlay-message" class="overlay-message">
+                ボタンまたは Enter でゲーム開始
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <section class="info-card metrics">
+            <div>
+              <p class="metric-label">Score</p>
+              <p id="score-value" class="metric-value">0</p>
+            </div>
+            <div>
+              <p class="metric-label">Level</p>
+              <p id="level-value" class="metric-value">1</p>
+            </div>
+            <div>
+              <p class="metric-label">Lines</p>
+              <p id="lines-value" class="metric-value">0</p>
+            </div>
+          </section>
+
+          <section class="info-card">
+            <div class="panel-header compact">
+              <div>
+                <p class="panel-label">Preview</p>
+                <h2>Next Piece</h2>
+              </div>
+            </div>
+            <div class="preview-frame">
+              <canvas
+                id="next-canvas"
+                width="160"
+                height="160"
+                aria-label="次のブロック"
+              ></canvas>
+            </div>
+          </section>
+
+          <section class="info-card controls-card">
+            <div class="button-row">
+              <button id="start-button" class="primary-button" type="button">
+                Start / Resume
+              </button>
+              <button id="pause-button" class="ghost-button" type="button">
+                Pause
+              </button>
+              <button id="restart-button" class="ghost-button" type="button">
+                Restart
+              </button>
+            </div>
+
+            <div class="controls-grid">
+              <p><span>Move</span><strong>← →</strong></p>
+              <p><span>Rotate</span><strong>↑ / X</strong></p>
+              <p><span>Soft Drop</span><strong>↓</strong></p>
+              <p><span>Hard Drop</span><strong>Space</strong></p>
+              <p><span>Pause</span><strong>P</strong></p>
+              <p><span>Restart</span><strong>R</strong></p>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./scripts/constants.js" defer></script>
+    <script src="./scripts/pieces.js" defer></script>
+    <script src="./scripts/board.js" defer></script>
+    <script src="./scripts/renderer.js" defer></script>
+    <script src="./scripts/audio.js" defer></script>
+    <script src="./scripts/input.js" defer></script>
+    <script src="./scripts/game.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+  </body>
+</html>
